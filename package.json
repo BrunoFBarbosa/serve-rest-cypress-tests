@@ -1,0 +1,36 @@
+{
+  "name": "serverest-cypress",
+  "version": "1.0.0",
+  "description": "Cypress Framework For ServeRest Application",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint cypress/**/*.cy.js cypress/support/**/*.js",
+    "lint:fix": "eslint cypress/**/*.cy.js cypress/support/**/*.js --fix",
+    "cypress:open:dev": "cross-env CYPRESS_ENVIROMENT=dev npx cypress open",
+    "cypress:run:dev": "cross-env CYPRESS_ENVIROMENT=dev npx cypress run",
+    "cypress:run:dev:ui": "cross-env CYPRESS_ENVIROMENT=dev npx cypress run --spec 'cypress/e2e/ui/'",
+    "cypress:run:dev:api": "cross-env CYPRESS_ENVIROMENT=dev npx cypress run --spec 'cypress/e2e/api/'",
+    "cypress:verify": "npx cypress verify"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "cross-env": "^7.0.3",
+    "cypress": "^13.13.1",
+    "cypress-localstorage-commands": "^2.2.5",
+    "cypress-plugin-xhr-toggle": "^1.0.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.54.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "husky": "^9.1.4",
+    "junit-report-merger": "^6.0.3",
+    "lint-staged": "^15.2.9"
+  },
+  "lint-staged": {
+    "cypress/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}
